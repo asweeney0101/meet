@@ -35,3 +35,7 @@ So I can launch the app more quickly
 
 As a user I would like to see a chart of the event data
 So that I can see what types of events are upcoming in each city
+
+## Serverless
+
+This app is a perfect candidate for serverles architecture. It will help with being able to acess the app offline, as well as profiding scalability.
