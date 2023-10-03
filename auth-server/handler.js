@@ -14,6 +14,7 @@ const oAuth2Client = new google.auth.OAuth2(
   redirect_uris[0]
 );
 
+
 module.exports.getAuthURL = async () => {
   
   const authUrl = oAuth2Client.generateAuthUrl({
@@ -24,7 +25,7 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': 'http://127.0.0.1:8080',
+      'Access-Control-Allow-Origin': 'theoffice@gruntmonkey.com',
       'Access-Control-Allow-Credentials': true,
     },
     body: JSON.stringify({
@@ -49,7 +50,7 @@ module.exports.getAccessToken = async (event) => {
       return {
         statusCode: 200,
         headers: {
-          'Access-Control-Allow-Origin': 'http://127.0.0.1:8080',
+          'Access-Control-Allow-Origin': 'theoffice@gruntmonkey.com',
           'Access-Control-Allow-Credentials': true,
         },
         body: JSON.stringify(results),
@@ -90,7 +91,7 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': 'http://127.0.0.1:8080',
+        'Access-Control-Allow-Origin': 'theoffice@gruntmonkey.com',
         'Access-Control-Allow-Credentials': true,
       },
       body: JSON.stringify({ events: results.data.items }),
