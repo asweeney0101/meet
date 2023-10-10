@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { getEvents } from '../api';
 import EventList from '../components/EventList';
 
 describe('<EventList /> component', () => {
@@ -16,5 +17,11 @@ describe('<EventList /> component', () => {
       expect (EventListComponent.getAllByRole("listitem").length).toBe(4);
     })
     
+    test('renders correct number of events', async () => {
+      const allEvents = await getEvents(); 
+      EventListComponent.rerender(<EventList events={allEvents} />);
+  expect(EventListComponent.getAllByRole("listitem")).toHaveLength(allEvents.length);
+    });
+
   });
 
