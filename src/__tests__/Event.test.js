@@ -3,7 +3,7 @@ import Event from '../components/Event';
 import mockData from '../mock-data';
 
 
-const mockEvent = mockData[0]
+const mockEvent = mockData[2];
 
 describe('<Event /> Component', () => {
     let EventComponent;
@@ -11,9 +11,13 @@ describe('<Event /> Component', () => {
         EventComponent = render(<Event event={mockEvent} />);
     })
      
-    test('Show Event Title', () => {
-        const title = EventComponent.queryByText(mockEvent.summary);
-        expect(title).toBeInTheDocument();
+    test('Has Event Title', () => {
+        expect(EventComponent.queryByText(mockEvent.summary)).toBeInTheDocument();
     })
 
+    test('Has Event Start Time', () => {
+        expect(EventComponent.queryByText(mockEvent.start.dateTime)).toBeInTheDocument();
+    })
+
+    
 })
