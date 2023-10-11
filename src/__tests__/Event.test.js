@@ -19,5 +19,8 @@ describe('<Event /> Component', () => {
         expect(EventComponent.queryByText(mockEvent.start.dateTime)).toBeInTheDocument();
     })
 
-    
+    test('Has Event Location', () => {
+        expect(EventComponent.queryByText(mockEvent.location)).toBeInTheDocument();
+    })
+
 })
