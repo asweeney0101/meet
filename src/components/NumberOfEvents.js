@@ -3,7 +3,7 @@ const NumberOfEvents = () => {
         <div id="number-of-events">
            <input
                 type="text"
-                
+                defaultValue={32}
            />
         </div>
     )

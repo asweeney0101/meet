@@ -7,7 +7,11 @@ describe('<NumberOfEvents /> Component', () => {
         NOEComponent = render(<NumberOfEvents />)
     })
 
-    test('has the input textbox', () => {
+    test('Has the input textbox', () => {
         expect(NOEComponent.queryByRole('textbox')).toBeInTheDocument();
       });
+
+    test('default value of textbox is 32', () => {
+        expect(NOEComponent.queryByRole('textbox')).toHaveValue('32');
+    })
 })
