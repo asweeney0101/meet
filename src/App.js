@@ -14,20 +14,21 @@ const App = () => {
 // why aren't we importing the value/use state we made in number of events
   const [events, setEvents] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
+  const [allLocations, setAllLocations] = useState([]);
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
   
   const fetchData = async () => {
     const allEvents = await getEvents();
     setEvents(allEvents.slice(0, currentNOE));
   }
-  
-  useEffect(() => {
-    fetchData();
-  }, []);
- 
+
   return (
    <div className="App">
      <NumberOfEvents />
-     <CitySearch />
+     <CitySearch allLocations={allLocations}/>
      <EventList events={events}/>
 
    </div>
