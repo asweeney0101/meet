@@ -72,20 +72,35 @@ describe('<CitySearch /> component', () => {
 
       describe('<CitySearch /> Integration', () => {
 
-        test('renders suggestions list when the app is rendered.', async () => {
+        test('renders events list when the app is rendered.', async () => {
           const user = userEvent.setup();
           const AppComponent = render(<App />);
           const AppDOM = AppComponent.container.firstChild;
       
-          const CitySearchDOM = AppDOM.querySelector('#city-search');
+          const CitySearchDOM = AppDOM.querySelector('#event-list');
           await user.click(within(CitySearchDOM).queryByRole('textbox'));
       
           const allEvents = await getEvents();
           const allLocations = extractLocations(allEvents);
-      
+         
           const suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem');
-          expect(suggestionListItems.length).toBe(allLocations.length + 1);
+          expect(suggestionListItems.length).toBe(32);
        });
+
+       test('renders suggestions list when the app is rendered.', async () => {
+        const user = userEvent.setup();
+        const AppComponent = render(<App />);
+        const AppDOM = AppComponent.container.firstChild;
+    
+        const CitySearchDOM = AppDOM.querySelector('#city-search');
+        await user.click(within(CitySearchDOM).queryByRole('textbox'));
+    
+        const allEvents = await getEvents();
+        const allLocations = extractLocations(allEvents);
+
+        const suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem');
+        expect(suggestionListItems.length).toBe(1);
+     });
 
       })
 
