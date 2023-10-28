@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 describe('<NumberOfEvents /> Component', () => {
     let NOEComponent;
     beforeEach(() => {
-        NOEComponent = render(<NumberOfEvents />)
+        NOEComponent = render(<NumberOfEvents setCurrentNOE={() => {}}/>)
     })
 
     test('Has the input textbox', () => {

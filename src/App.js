@@ -19,7 +19,7 @@ const App = () => {
   
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]);
   
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -32,7 +32,7 @@ const App = () => {
 
   return (
    <div className="App">
-     <NumberOfEvents />
+     <NumberOfEvents setCurrentNOE={setCurrentNOE}/>
      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
      <EventList events={events}/>
 
