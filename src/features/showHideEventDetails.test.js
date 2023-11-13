@@ -2,7 +2,7 @@ import { loadFeature, defineFeature } from 'jest-cucumber';
 import { render, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
-import { getEvents } from '../api.js';
+
 
 const feature = loadFeature('./src/features/showHideEventDetails.feature');
 
@@ -46,8 +46,8 @@ defineFeature(feature, test => {
         });
 
         when('the user clicks on an event\'s show details button', async () => {
-            const button = AppComponent.queryAllByText('Show Details')[0];
-            await userEvent.click(button);          
+            const showDetails = AppComponent.queryAllByText('Show Details')[0];
+            await userEvent.click(showDetails);          
         });
 
         then('the event should expand to show the event\'s details', () => {
@@ -60,7 +60,7 @@ defineFeature(feature, test => {
     test('User can collapse event details.', ({ given, when, then }) => {
         let AppComponent;
         let details;
-        
+
         given('user has clicked on an event\'s details from the event list', async () => {
             AppComponent = render(<App />);
             const showDetails = AppComponent.queryAllByText('Show Details')[0];
