@@ -54,26 +54,25 @@ defineFeature(feature, test => {
     test('User can select a city from the suggested list.', ({ given, and, when, then }) => {
         
         let AppComponent;
-        let AppDOM;
-        let CitySearchDOM;
+        let user;
+        let CitySearch;
         let citySearchInput;
+        
         given('user was typing “Berlin” in the city textbox', async () => {
             AppComponent = render(<App />)
-            const user = userEvent.setup();
-            AppDOM = AppComponent.container;
-            CitySearchDOM = AppDOM.querySelector("#city-search");
-            citySearchInput = within(CitySearchDOM).queryByRole('textbox');
+            user = userEvent.setup();
+            CitySearch = AppComponent.container.querySelector("#city-search");
+            citySearchInput = within(CitySearch).queryByRole('textbox');
             await user.type(citySearchInput, "Berlin");
         });
 
         let suggestionListItems;
         and('the list of suggested cities is showing', () => {
-            suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem'); 
+            suggestionListItems = within(CitySearch).queryAllByRole('listitem'); 
             expect(suggestionListItems).toHaveLength(2);
         });
 
         when('the user selects a city (e.g., “Berlin, Germany”) from the list', async () => {
-            const user = userEvent.setup();
             await user.click(suggestionListItems[0]);
         });
 
@@ -82,7 +81,7 @@ defineFeature(feature, test => {
         });
 
         and('the user should receive a list of upcoming events in that city', async () => {
-            const EventListDOM = AppDOM.querySelector('#event-list');
+            const EventListDOM = AppComponent.container.querySelector('#event-list');
             const EventListItems = within(EventListDOM).queryAllByRole('listitem');
             const allEvents = await getEvents();
 
