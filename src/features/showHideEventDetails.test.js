@@ -18,7 +18,7 @@ defineFeature(feature, test => {
         });
 
         when('the list of events are displayed', async () => {
-            EventList = AppComponent.container.firstChild.querySelector('#event-list');
+            EventList = AppComponent.container.querySelector('#event-list');
 
             await waitFor(() => {
                 EventListItems = within(EventList).queryAllByRole('listitem');
@@ -41,7 +41,7 @@ defineFeature(feature, test => {
         let EventList;
         given('the user has opened the app to the event list', () => {
             AppComponent = render(<App />);
-            EventList = AppComponent.container.firstChild.querySelector('#event-list');
+            EventList = AppComponent.container.querySelector('#event-list');
             expect(EventList).toBeInTheDocument();
         });
 
