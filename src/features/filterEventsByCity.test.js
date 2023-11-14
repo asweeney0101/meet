@@ -18,7 +18,7 @@ defineFeature(feature, test => {
         });
 
         then('the user should see the list of all upcoming events.', async () => {
-            const EventListDOM = AppComponent.container.firstChild.querySelector('#event-list');
+            const EventListDOM = AppComponent.container.querySelector('#event-list');
       
             await waitFor(() => {
               const EventListItems = within(EventListDOM).queryAllByRole('listitem');
@@ -40,7 +40,7 @@ defineFeature(feature, test => {
         let CitySearchDOM;
         when('user starts typing in the city textbox', async () => {
             const user = userEvent.setup();
-            CitySearchDOM = AppComponent.container.firstChild.querySelector('#city-search');
+            CitySearchDOM = AppComponent.container.querySelector('#city-search');
             const citySearchInput = within(CitySearchDOM).getByRole('textbox');
             await user.type(citySearchInput, "Berlin")
         });
@@ -60,7 +60,7 @@ defineFeature(feature, test => {
         given('user was typing “Berlin” in the city textbox', async () => {
             AppComponent = render(<App />)
             const user = userEvent.setup();
-            AppDOM = AppComponent.container.firstChild;
+            AppDOM = AppComponent.container;
             CitySearchDOM = AppDOM.querySelector("#city-search");
             citySearchInput = within(CitySearchDOM).queryByRole('textbox');
             await user.type(citySearchInput, "Berlin");
