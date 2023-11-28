@@ -33,27 +33,30 @@ class Alert extends Component {
   }
 }
 
-  export class InfoAlert extends Alert {
+  class InfoAlert extends Alert {
     constructor(props) {
       super(props);
-      this.color = "blue"; // blue
-    }
-  }
-
-  class WarningAlert extends Alert {
-    constructor(props) {
-      super(props);
-      this.color = 'orange';
+      this.color = "blue"; 
     }
   }
 
   class ErrorAlert extends Alert {
     constructor(props) {
       super(props);
-      this.color = 'rgb(0, 0, 255)'; // blue
-      this.bgColor = 'rgb(220, 220, 255)'; // light blue
-      this.text = "Test Error Alert";
+      this.color = "red"; 
     }
-
   }
+
+  // class WarningAlert extends Alert {
+  //   constructor(props) {
+  //     super(props);
+  //     this.color = 'orange';
+  //   }
+  // }
+
+  export { InfoAlert, ErrorAlert };
+
+
+
+ 
 

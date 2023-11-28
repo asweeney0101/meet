@@ -1,8 +1,28 @@
+import { useState } from "react";
 
-const NumberOfEvents = ({ setCurrentNOE }) => {
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     const handleInputChange = (event) => {
         const value = parseInt(event.target.value, 10);
-        setCurrentNOE(value);
+        
+        
+        if (isNaN(value)) {
+            setErrorAlert("Please Enter a Number of Events");
+        }
+        else if 
+        (value <= 0){ 
+            setErrorAlert("Please Enter a Positive Number");
+        }
+        else if 
+        (value > 100 ){ 
+            setErrorAlert("Please Limit Searches to Less Than 100");
+        }
+        else {
+            setErrorAlert("")
+            setCurrentNOE(value);
+        }
+
+
+
     }
     
     
