@@ -18,6 +18,12 @@ const checkToken = async (accessToken) => {
     if (window.location.href.startsWith("http://localhost")) {
       return mockData;
     }
+
+    if (!navigator.onLine) {
+      const events = localStorage.getItem("lastEvents");
+      NProgress.done();
+      return events?JSON.parse(events):[];
+    }
   
     const token = await getAccessToken();
     
@@ -36,15 +42,17 @@ const checkToken = async (accessToken) => {
         }
       };
 
-    if (token) {
-      removeQuery();
-      const url =  "https://uzn77hnpci.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + "/" + token;
-      const response = await fetch(url);
-      const result = await response.json();
-      if (result) {
+     if (token) {
+        removeQuery();
+        const url =  "https://uzn77hnpci.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + "/" + token;
+        const response = await fetch(url);
+        const result = await response.json();
+     if (result) {
+        NProgress.done();
+        localStorage.setItem("lastEvents", JSON.stringify(result.events));
         return result.events;
-      } else return null; 
-    }
+     } else return null; 
+         }  
   };
 
 
