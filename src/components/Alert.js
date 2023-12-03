@@ -47,14 +47,14 @@ class Alert extends Component {
     }
   }
 
-  // class WarningAlert extends Alert {
-  //   constructor(props) {
-  //     super(props);
-  //     this.color = 'orange';
-  //   }
-  // }
+  class WarningAlert extends Alert {
+    constructor(props) {
+      super(props);
+      this.color = 'orange';
+    }
+  }
 
-  export { InfoAlert, ErrorAlert };
+  export { InfoAlert, ErrorAlert, WarningAlert };
 
 
 
