@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+.title-container {
+  margin-bottom: 35px;
+}
+
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -25,7 +29,7 @@ input[type="number"] {
   margin-bottom: 20px;
 }
 
-.city {
+.city-search-input {
   width: 250px;
 }
 
@@ -61,6 +65,18 @@ input[type="number"] {
 
 .suggestions > li:hover {
   background-color: #bcdcdb;
+}
+
+.noe-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+#number-of-events-input {
+  width: 50px;
+  margin-left: 10px;
 }
 
 #event-list {

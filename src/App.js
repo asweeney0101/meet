@@ -45,21 +45,30 @@ const App = () => {
         <div className="alerts-container">
            {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
            {errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
-
+           {warningAlert.length ? <WarningAlert text={warningAlert}/> : null}
         </div>
-    
-      <CitySearch 
-         allLocations={allLocations} 
-         setCurrentCity={setCurrentCity} 
-         setInfoAlert={setInfoAlert}
-         />   
-      <NumberOfEvents 
-          setCurrentNOE={setCurrentNOE}
-          setErrorAlert={setErrorAlert}
-          />
-     
 
-     <EventList events={events}/>
+        <div className="title-container">
+            <h1>Meet App</h1>
+            <p>Grow your knowledge by finding tech events near you!</p>
+        </div>
+
+        <div>
+            <CitySearch 
+              allLocations={allLocations} 
+             setCurrentCity={setCurrentCity} 
+              setInfoAlert={setInfoAlert}
+           />  
+          <div className="noe-container">
+            <p># of Events: </p>
+            <NumberOfEvents 
+              setCurrentNOE={setCurrentNOE}
+              setErrorAlert={setErrorAlert}
+             />
+          </div>
+        </div>
+     
+        <EventList events={events}/>
 
    </div>
    
