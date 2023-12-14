@@ -1,12 +1,14 @@
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
+import CityEventsChart from './components/CityEventChart';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import { extractLocations, getEvents } from './api'
 import { useEffect, useState } from 'react';
 
 
 import './App.css';
+
 
 
 
@@ -56,7 +58,7 @@ const App = () => {
         <div>
             <CitySearch 
               allLocations={allLocations} 
-             setCurrentCity={setCurrentCity} 
+              setCurrentCity={setCurrentCity} 
               setInfoAlert={setInfoAlert}
            />  
           <div className="noe-container">
@@ -67,7 +69,8 @@ const App = () => {
              />
           </div>
         </div>
-     
+
+        <CityEventsChart events={events} />
         <EventList events={events}/>
 
    </div>
