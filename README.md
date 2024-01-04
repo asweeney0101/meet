@@ -1,41 +1,70 @@
-# Meet App
+# Getting Started with Create React App
 
-To build a serverless, progressive web application (PWA) with React using a
-test-driven development (TDD) technique. The application uses the Google
-Calendar API to fetch upcoming events
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Key Features
+## Available Scripts
 
-### Filter Events by City
+In the project directory, you can run:
 
-As a User I should be able to filter events by city
-So that I can find events nearby
+### `npm start`
 
-### Show/Hide Event Details
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-As a User I should be able to show/hide event details
-So that I can see more or less information about an event
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Specify Number of Events
+### `npm test`
 
-As a User I should be able to specify the number of events to view
-So that I can see more or less events at a time
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Use the App When Offline
+### `npm run build`
 
-As a user, I would like to be able to use the app when offline
-So that I can see the events I viewed the last time I was online
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Add an App Shortcut to the Home Screen
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-As a user I would like to have an app shorcut
-So I can launch the app more quickly
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Display Charts Visualizing Event Details
+### `npm run eject`
 
-As a user I would like to see a chart of the event data
-So that I can see what types of events are upcoming in each city
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Serverless
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-This app is a perfect candidate for serverles architecture. It will help with being able to acess the app offline, as well as profiding scalability.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
