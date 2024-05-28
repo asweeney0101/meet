@@ -11,4 +11,4 @@ Hosted on Netlify.
 
 ## Access
 
-Go to: <a target=_blank href="https://meet-tech-events.netlify.app/">https://meet-tech-events.netlify.app/</a>
+Go to: <a target="_blank" href="https://meet-tech-events.netlify.app/">https://meet-tech-events.netlify.app/</a>
